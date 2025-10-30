@@ -1,0 +1,110 @@
+.slideC {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  width: 362px;
+  height: 420px;
+  margin: 0 auto;
+}
+
+.slide {
+  width: 362px;
+  height: 420px;
+  transition: transform 500ms ease 0s, opacity 500ms ease 0s,
+    visibility 500ms ease 0s;
+  position: absolute;
+  top: 0;
+  border-radius: 12px;
+}
+
+/* 3D reflection effect */
+.reflection {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: -60px;
+  border-radius: 12px;
+  transition: transform 500ms ease 0s, opacity 500ms ease 0s,
+    visibility 500ms ease 0s;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderContent {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 30px;
+  align-items: flex-start;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sliderContent h2 {
+  margin: 16px 0;
+}
+.sliderContent p {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+/* Styles for the navigation buttons */
+.btns {
+  padding-top: 100px;
+}
+
+.btns .btn {
+  cursor: pointer;
+}
+
+.btns .btn:last-child {
+  margin-left: 40px;
+}
+
+/* NOTE: The 'body' and '.center' classes from the original
+    'styles.css' have been REMOVED to avoid conflicts
+    with App.jsx and Tailwind.
+  */
+.project-snippet-img {
+  width: 100%;
+  height: 100px; /* You can adjust this height */
+  object-fit: cover; /* Ensures the image covers the area nicely */
+  border-radius: 8px; /* Match the slide's rounded corners */
+  margin: 10px 0; /* Add some space around the image */
+  background-color: #333; /* A dark fallback bg color */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+.repo-button {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-top: auto; /* Pushes button to the bottom if content is short */
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+  align-self: flex-start; /* Aligns with the rest of the left-aligned content */
+}
+
+.repo-button:hover {
+  background-color: white;
+  color: #333; /* Change text color on hover to be readable */
+}
+
+/* We also need to make the parent container flex-grow
+    so the button can be pushed to the bottom.
+  */
+.sliderContent {
+  /* ... (your existing sliderContent styles) ... */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Make the content fill the slide */
+  height: 100%; /* Ensure it takes full height */
+}
